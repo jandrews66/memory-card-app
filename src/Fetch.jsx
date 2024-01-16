@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const Fetch = () => {
-  const [chars, setChars] = useState([]);
+const Fetch = ({setChars}) => {
 
   useEffect(() => {
     const fetchData = async () => {
@@ -11,7 +10,6 @@ const Fetch = () => {
           throw new Error('Network response was not ok');
         }
         const data = await response.json();
-        console.log(data);
         setChars(data);
       } catch (error) {
         console.error('Error fetching data:', error.message);
@@ -21,17 +19,7 @@ const Fetch = () => {
     fetchData();
   }, []);
 
-  return (
-    <div>
-      {chars.map((char) => (
-        <>
-        <img key={char.id} src={char.image} alt={char.title} width={100} />
-        <p>{char.name}{char.id}</p>
-        </>
 
-      ))}
-    </div>
-  );
 };
 
 export default Fetch;
