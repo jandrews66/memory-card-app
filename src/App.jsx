@@ -10,7 +10,9 @@ function App() {
     <>
       <h1>Bobs Burgers</h1>
       <Fetch setChars={setChars}/>
-      <Card chars={chars} setChars={setChars}/>
+      <div className="container">
+        <Card chars={chars} setChars={setChars}/>
+      </div>
     </>
   )
 }
