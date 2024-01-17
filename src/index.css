@@ -2,7 +2,7 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  background-color: #ffffff;
+  background-color: #fffcf6;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -25,27 +25,46 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  color: #e40000
 
 }
 
 .container{
-  border: 2px solid red;
+  /* border: 2px solid red; */
+  grid-column: 2/3;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 15px;
-}
+  padding-left: 30px;
+  padding-right: 30px;
 
-.card{
-  border: 1px solid blue;
-  display: flex;
-  flex-direction: column;
 }
 
 .card > p {
   margin-top: auto;
+  background-color: #e40000;
+  border-bottom: 3px solid #ffdd00;
+  border-top: 3px solid #ffdd00;
+  color: white;
+  font-weight: bold;
 }
 
 .card > img {
   align-self: center;
   margin-top: auto;
+}
+
+.card{
+  min-height: 250px;
+  border: 3px solid #e40000;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  outline: 3px solid #ffdd00;
+  transition: outline 0.2s linear 0s;
+}
+
+.card:hover {
+  outline: 3px solid #e40000;
 }
