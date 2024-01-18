@@ -20,10 +20,9 @@ export const Fetch = ({setChars}) => {
     fetchData();
   }, []);
 };
-export const FetchBurg = ({setBurg}) => {
+export const FetchBurg = ({setBurg, ranNum}) => {
     useEffect(() => {
         const fetchData = async () => {
-            const ranNum = Math.floor(Math.random() * 9) + 1
     
           try {
             const response = await fetch(`https://bobsburgers-api.herokuapp.com/burgerOfTheDay/${ranNum}`);
@@ -31,7 +30,6 @@ export const FetchBurg = ({setBurg}) => {
               throw new Error('Network response was not ok');
             }
             const data = await response.json();
-            console.log(data)
             setBurg(data)
           } catch (error) {
             console.error('Error fetching data:', error.message);
@@ -39,6 +37,6 @@ export const FetchBurg = ({setBurg}) => {
         };
     
         fetchData();
-      }, []);    
+      }, [ranNum]);    
 
 }

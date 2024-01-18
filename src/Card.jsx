@@ -1,28 +1,8 @@
 import { useState } from 'react'
 
-export default function Card({chars, setChars, score, setScore, selected, setSelected, highScore, setHighScore}){
+
+export default function Card({chars, handleClick}){
     
-
-    const shuffle = (array) => { 
-        return array.sort(() => Math.random() - 0.5); 
-    }; 
-
-    function handleClick(id){
-        setChars(shuffle([...chars]))
-
-        if (selected.find((card) => card == id)){
-            console.log("game over")
-            if (score > highScore){
-                setHighScore(score)
-            }
-            setScore(0)
-            setSelected([])
-        } else {
-            setScore(score + 1)
-            setSelected([...selected, id])
-        }
- 
-    }
 
     return (
         chars.map(char => 
