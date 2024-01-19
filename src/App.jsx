@@ -11,20 +11,25 @@ function App() {
   const [highScore, setHighScore] = useState(0);
   const [selected, setSelected] = useState([]);
   const [burg, setBurg] = useState([]);
+  const [endGame, setEndGame] = useState(false)
 
   const shuffle = (array) => { 
     return array.sort(() => Math.random() - 0.5); 
 }; 
 
 function handleClick(id){
+    if (endGame){
+      return
+    }
+
     setChars(shuffle([...chars]))
+
     if (selected.find((card) => card == id)){
-        console.log("game over")
+        setEndGame(true)
         if (score > highScore){
             setHighScore(score)
         }
-        setScore(0)
-        setSelected([])
+
     } else {
         setScore(score + 1)
         setSelected([...selected, id])
@@ -34,10 +39,21 @@ function handleClick(id){
 }
 const [ranNum, setRanNum] = useState(Math.floor(Math.random() * 9) + 1)
 
-
+function handleAgainClick(){
+  setScore(0)
+  setSelected([])
+  setEndGame(false)
+}
 
   return (
     <>
+    {endGame && (
+      <div className="endGame">
+        <h2>Game Over!</h2>
+        <h2>Score: {score}</h2>
+        <button onClick={handleAgainClick}>Play Again</button>
+      </div>
+    )}
       <h1>Bobs Burgers Memory Game</h1>
       <div className="header">
         <div className="scores">
@@ -57,6 +73,8 @@ const [ranNum, setRanNum] = useState(Math.floor(Math.random() * 9) + 1)
         setBurg={setBurg}
         ranNum={ranNum}
       />
+ 
+
       <div className="container">
         <Card 
         chars={chars} 

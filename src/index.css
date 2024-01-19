@@ -50,7 +50,6 @@ h1 {
 .card > p {
   margin-top: auto;
   background-color: #e40000;
-  border-bottom: 3px solid #ffdd00;
   border-top: 3px solid #ffdd00;
   color: white;
   font-weight: bold;
@@ -96,5 +95,37 @@ h1 {
   font-family: BobsBurgers;
   font-size: 2em;
   color: #118200;
-  border-color: #ffdd00;
+}
+
+.endGame {
+  position: fixed;
+  min-width: 50vw;
+  min-height: 50vh;
+  background-color: #fffcf6;
+  border: 5px solid #e40000;
+  outline: 5px solid #ffdd00;
+  border-radius: 3px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 1;
+}
+
+button {
+  background-color: #ffdd00;
+  color: #e40000;
+  border: 3px solid #e40000;
+  border-radius: 2px;
+  font-size: 1.5em;
+  outline: 3px solid #ffdd00;
+  font-family: inherit;
+  font-weight: bold;
+  width: 160px;
+  padding: 5px 10px;
+  align-self: center;
+  margin-top: 10px;
+
 }
