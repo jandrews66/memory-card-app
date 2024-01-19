@@ -34,7 +34,6 @@ function handleClick(id){
         setScore(score + 1)
         setSelected([...selected, id])
     }
-    setRanNum(Math.floor(Math.random() * 9) + 1)
 
 }
 const [ranNum, setRanNum] = useState(Math.floor(Math.random() * 9) + 1)
@@ -42,6 +41,7 @@ const [ranNum, setRanNum] = useState(Math.floor(Math.random() * 9) + 1)
 function handleAgainClick(){
   setScore(0)
   setSelected([])
+  setRanNum(Math.floor(Math.random() * 9) + 1)
   setEndGame(false)
 }
 

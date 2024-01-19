@@ -39,12 +39,12 @@ h1 {
 }
 
 .container{
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 15px;
   padding-left: 10vh;
   padding-right: 10vh;
-
+  justify-content: center;
 }
 
 .card > p {
@@ -61,6 +61,7 @@ h1 {
 }
 
 .card{
+  width: 200px;
   min-height: 250px;
   border: 3px solid #e40000;
   border-radius: 3px;
@@ -69,6 +70,7 @@ h1 {
   background-color: white;
   outline: 3px solid #ffdd00;
   transition: outline 0.2s linear 0s;
+  align-self: center;
 }
 
 .card:hover {
