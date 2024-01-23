@@ -71,6 +71,8 @@ h1 {
   outline: 3px solid #ffdd00;
   transition: outline 0.2s linear 0s;
   align-self: center;
+  cursor: pointer;
+
 }
 
 .card:hover {
@@ -129,5 +131,6 @@ button {
   padding: 5px 10px;
   align-self: center;
   margin-top: 10px;
+  cursor: pointer;
 
 }

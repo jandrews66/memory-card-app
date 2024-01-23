@@ -37,6 +37,6 @@ export const FetchBurg = ({setBurg, ranNum}) => {
         };
     
         fetchData();
-      }, [ranNum]);    
+      }, [setBurg, ranNum]);    
 
 }
